@@ -60,7 +60,7 @@ function revealInformation() {
             });
 
             debounce = false;
-        }, 2000);
+        }, 5000);
     }
 }
 

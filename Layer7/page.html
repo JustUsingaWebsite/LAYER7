@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)https://kryanbz.github.io/Final-Resume/3api.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body class="mx-auto" style="width: 400px;"><header>
-</header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Revealer</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #1a1a1a; /* Dark background color */
+            color: #ffffff; /* Light text color */
+            font-family: 'Arial', sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #333333; /* Dark button background color */
+            color: #ffffff; /* Light button text color */
+            border: none;
+            cursor: pointer;
+        }
+
+        #information {
+            margin-top: 20px;
+            color: #ffffff; /* Light text color */
+        }
+
+        #loadingImage {
+            display: block;
+            margin: 20px auto;
+            width: 50px; /* Adjust the size as needed */
+            height: 50px; /* Adjust the size as needed */
+        }
+    </style>
+</head>
+<body>
+
+<button id="revealBtn" onclick="revealInformation()">Reveal Information</button>
+
+<div id="information">
+    <h2>Your IP is from:</h2>
+    <p id="city">State: </p>  <img id="loadingImage" src="page_files/loading.gif" alt="Loading...">
+    <p id="country">Country: </p>  <img id="loadingImage" src="page_files/loading.gif" alt="Loading...">
+    <h2>The weather there is: </h2>
+    <p id="weather"></p>
+    <img id="loadingImage" src="page_files/loading.gif" alt="Loading...">
+    <h2>Your Internet Service Provider is:</h2>
+    <p id="isp"></p>  <img id="loadingImage" src="page_files/loading.gif" alt="Loading...">
+</div>
+
 <script src="code.js" defer></script>
-
-
-<img src="./page_files/Free-Courses-to-learn-JavaScript.jpg" class="img-fluid" alt="JavaScript" height="550px" width="550px">
-
-
-<h1>JavaScript &amp; API's</h1>
-<p>With basic knowledge of JavaScript and API's I can find out that: </p>
-
-<h2>You IP is from:</h2>
-<p id="city">State: </p>
-<p id="country">Country: </p>
-<h2>The weather there is: </h2>
-<p id="weather">NULL</p>
-<h2>Your Internet Service Provider is:</h2>
-<p id="isp">NULL</p>
-
-<img src="./page_files/planningpme-api.jpg" class="img-fluid" alt="JavaScript">
-
-
-
-
-
-
-
-
-</body></html>
+</body>
+</html>
