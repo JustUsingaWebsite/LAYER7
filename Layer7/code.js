@@ -6,6 +6,10 @@ let isp;
 let weather;
 let description;
 
+let button = document.getElementById("revealBtn");
+let allImages = document.querySelectorAll("img");
+let debounce = false;
+
 function fetchweather(){
     
 
@@ -27,7 +31,7 @@ function fetchData(){
        document.getElementById("isp").innerHTML = data.organization;
        document.getElementById("city").append(data.state_prov)
        document.getElementById("country").append(data.country_name_official)
-        console.log(data)
+        //console.log(data)
     })
 
     .catch(error => console.log(error));
@@ -63,15 +67,3 @@ function revealInformation() {
         }, 5000);
     }
 }
-
-
-
-
-// Set display property to 'none' for each img element
-
-
-//fetchData()
-//fetchweather()
-
-
-
