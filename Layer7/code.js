@@ -5,6 +5,9 @@ let city;
 let isp;
 let weather;
 let description;
+let debounce = false;
+let button = document.getElementById("revealBtn");
+let allImages = document.querySelectorAll('img');
 
 function fetchweather(){
     
@@ -27,14 +30,51 @@ function fetchData(){
        document.getElementById("isp").innerHTML = data.organization;
        document.getElementById("city").append(data.state_prov)
        document.getElementById("country").append(data.country_name_official)
-        console.log(data)
+        //console.log(data)
     })
 
     .catch(error => console.log(error));
 }
 
-fetchData()
-fetchweather()
+
+
+function revealInformation() {
+    if (debounce == false) {
+        button.innerHTML = "Hide Information";
+        fetchData();
+        fetchweather();
+
+        allImages.forEach(img => {
+            img.style.display = 'none';
+        });
+
+        debounce = true;
+
+        // Wait for 2 seconds before executing the next part of the code
+        setTimeout(() => {
+            button.innerHTML = "Reveal Information";
+            document.getElementById("isp").innerHTML = "";
+            document.getElementById("city").innerHTML = "State: ";
+            document.getElementById("country").innerHTML = "Country: ";
+            document.getElementById("weather").innerHTML = "";
+
+            allImages.forEach(img => {
+                img.style.display = 'block';
+            });
+
+            debounce = false;
+        }, 2000);
+    }
+}
+
+
+
+
+// Set display property to 'none' for each img element
+
+
+//fetchData()
+//fetchweather()
 
 
 
