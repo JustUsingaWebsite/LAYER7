@@ -5,9 +5,6 @@ let city;
 let isp;
 let weather;
 let description;
-let debounce = false;
-let button = document.getElementById("revealBtn");
-let allImages = document.querySelectorAll('img');
 
 function fetchweather(){
     
@@ -30,7 +27,7 @@ function fetchData(){
        document.getElementById("isp").innerHTML = data.organization;
        document.getElementById("city").append(data.state_prov)
        document.getElementById("country").append(data.country_name_official)
-        //console.log(data)
+        console.log(data)
     })
 
     .catch(error => console.log(error));
@@ -63,7 +60,7 @@ function revealInformation() {
             });
 
             debounce = false;
-        }, 5000);
+        }, 2000);
     }
 }
 
